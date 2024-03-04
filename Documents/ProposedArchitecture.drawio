@@ -1,0 +1,51 @@
+<mxfile host="app.diagrams.net" modified="2024-03-04T15:48:44.141Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="cpscb4gw71paXDYwIQ9Z" version="23.1.5" type="device" pages="2">
+  <diagram name="Project Structure" id="AwTME-ZHVjU8SSDjymOy">
+    <mxGraphModel dx="1728" dy="915" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="lUllGqy8MmqY6NFvTM__-2" value="&lt;b&gt;CMS Features&lt;/b&gt;&lt;br&gt;(Content Models and Business Logic)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="220" width="360" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="lUllGqy8MmqY6NFvTM__-4" value="&lt;b&gt;CMS Headed&lt;/b&gt;&lt;br&gt;(Razor Class Library&lt;br&gt;Controllers &amp;amp; Views)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="140" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lUllGqy8MmqY6NFvTM__-5" value="&lt;b&gt;CMS Headless&lt;/b&gt;&lt;br&gt;(API Enrichment)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="140" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lUllGqy8MmqY6NFvTM__-6" value="&lt;b&gt;CMS Website&lt;/b&gt;&lt;br&gt;(.NET Website, Start-up &amp;amp; Configuration only)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="360" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="A5gGh9jzOPVl6mLNrBRr-1" value="And / Or" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="200" y="140" width="40" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="6-6ozhRf9LZbBfHxQPol" name="Feature Structure">
+    <mxGraphModel dx="2074" dy="1098" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="P2WVBIGd0IU5fgRBUXS8-1" value="CMS Features" style="rounded=0;whiteSpace=wrap;html=1;align=right;" vertex="1" parent="1">
+          <mxGeometry x="40" y="220" width="360" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="P2WVBIGd0IU5fgRBUXS8-2" value="CMS Headed / Headless" style="rounded=0;whiteSpace=wrap;html=1;align=right;" vertex="1" parent="1">
+          <mxGeometry x="40" y="140" width="360" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="P2WVBIGd0IU5fgRBUXS8-3" value="CMS Website" style="rounded=0;whiteSpace=wrap;html=1;align=right;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="360" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="P2WVBIGd0IU5fgRBUXS8-4" value="Feature 1" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="50" width="50" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="P2WVBIGd0IU5fgRBUXS8-5" value="Feature 2" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="110" y="50" width="50" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="P2WVBIGd0IU5fgRBUXS8-6" value="Feature 3" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="50" width="50" height="240" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

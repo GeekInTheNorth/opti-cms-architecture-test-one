@@ -1,3 +1,4 @@
+using Cms.Web.ServiceExtensions;
 using EPiServer.Cms.Shell;
 using EPiServer.Cms.Shell.UI;
 using EPiServer.Cms.UI.AspNetIdentity;
@@ -39,10 +40,11 @@ public class Startup
             app.UseDeveloperExceptionPage();
         }
 
-        app.UseStaticFiles();
+        app.UseCachedStaticFiles();
         app.UseRouting();
         app.UseAuthentication();
         app.UseAuthorization();
+        app.UseSecureCookies();
 
         app.UseEndpoints(endpoints =>
         {

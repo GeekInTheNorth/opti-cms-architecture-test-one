@@ -1,0 +1,26 @@
+@using Cms.Features.Pages
+@using Cms.Headed.Pages
+@using EPiServer.Framework.Web
+@using EPiServer.Framework.Web.Mvc.Html
+@using EPiServer.Web.Mvc.Html
+
+@model ISitePageViewModel<ISitePageData>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    @Html.RequiredClientResources(RenderingTags.Header)
+    @await Html.RenderEPiServerQuickNavigatorAsync()
+</head>
+<body>
+
+    <div>
+        @RenderBody()
+    </div>
+
+    @await RenderSectionAsync("Scripts", required: false)
+    @Html.RequiredClientResources(RenderingTags.Footer)
+
+</body>
+</html>

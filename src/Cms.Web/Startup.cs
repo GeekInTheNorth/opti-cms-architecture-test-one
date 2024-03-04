@@ -1,53 +1,52 @@
-﻿using EPiServer.Cms.Shell;
+using EPiServer.Cms.Shell;
 using EPiServer.Cms.Shell.UI;
 using EPiServer.Cms.UI.AspNetIdentity;
+using EPiServer.Scheduler;
+using EPiServer.ServiceLocation;
 using EPiServer.Web.Routing;
 
-namespace Cms.Web
+namespace Cms.Web;
+
+public class Startup
 {
-    public class Startup
+    private readonly IWebHostEnvironment _webHostingEnvironment;
+
+    public Startup(IWebHostEnvironment webHostingEnvironment)
     {
-        private readonly IWebHostEnvironment _webHostingEnvironment;
+        _webHostingEnvironment = webHostingEnvironment;
+    }
 
-        private readonly IConfiguration _configuration;
-
-        public Startup(
-            IWebHostEnvironment webHostingEnvironment,
-            IConfiguration configuration)
+    public void ConfigureServices(IServiceCollection services)
+    {
+        if (_webHostingEnvironment.IsDevelopment())
         {
-            _webHostingEnvironment = webHostingEnvironment;
-            _configuration = configuration;
+            AppDomain.CurrentDomain.SetData("DataDirectory", Path.Combine(_webHostingEnvironment.ContentRootPath, "App_Data"));
+
+            services.Configure<SchedulerOptions>(options => options.Enabled = false);
         }
 
-        public void ConfigureServices(IServiceCollection services)
+        services
+            .AddCmsAspNetIdentity<ApplicationUser>()
+            .AddCms()
+            .AddAdminUserRegistration(x => x.Behavior = RegisterAdminUserBehaviors.Enabled | RegisterAdminUserBehaviors.SingleUserOnly)
+            .AddEmbeddedLocalization<Startup>();
+    }
+
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+    {
+        if (env.IsDevelopment())
         {
-            services.AddCmsAspNetIdentity<ApplicationUser>()
-                    .AddCms()
-                    .AddAdminUserRegistration(x => x.Behavior = RegisterAdminUserBehaviors.Enabled | RegisterAdminUserBehaviors.SingleUserOnly);
+            app.UseDeveloperExceptionPage();
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        app.UseStaticFiles();
+        app.UseRouting();
+        app.UseAuthentication();
+        app.UseAuthorization();
+
+        app.UseEndpoints(endpoints =>
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseExceptionHandler("/server-error");
-            }
-
-            app.UseStatusCodePagesWithReExecute("/error", "?statusCode={0}");
-
-            app.UseRouting();
-            app.UseAuthentication();
-            app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapContent();
-                endpoints.MapRazorPages();
-            });
-        }
+            endpoints.MapContent();
+        });
     }
 }

@@ -13,6 +13,8 @@
 
   <ItemGroup>
     <PackageReference Include="EPiServer.CMS.AspNetCore.HtmlHelpers" Version="12.20.2" />
+	<PackageReference Include="EPiServer.CMS.AspNetCore.TagHelpers" Version="12.20.2" />
+	<PackageReference Include="EPiServer.CMS.UI" Version="12.27.1" />
     <PackageReference Include="EPiServer.Framework" Version="12.20.2" />
   </ItemGroup>
 

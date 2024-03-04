@@ -9,7 +9,7 @@ public sealed class HomePageController : PageController<HomePage>
     public IActionResult Index(HomePage currentPage)
     {
         var model = new HomePageViewModel { CurrentPage = currentPage };
-
-        return View("HomePage.cshtml", model);
+        
+        return View("~/Views/HomePage/Index.cshtml", model);
     }
 }

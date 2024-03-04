@@ -13,4 +13,9 @@ public class HomePage : SitePageData
         Name = "Heading",
         Order = 10)]
     public virtual string? Heading { get; set; }
+
+    [Display(
+        Name = "Main Content",
+        Order = 20)]
+    public virtual ContentArea? MainContent { get; set; }
 }

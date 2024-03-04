@@ -2,3 +2,5 @@
 @model HomePageViewModel
 
 <h1>@Model.CurrentPage.Heading</h1>
+
+@Html.PropertyFor(x => x.CurrentPage.MainContent)

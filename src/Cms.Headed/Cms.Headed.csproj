@@ -1,25 +1,36 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-	<AddRazorSupportForMvc>true</AddRazorSupportForMvc>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <SupportedPlatform Include="browser" />
-  </ItemGroup>
+	<ItemGroup>
+		<Compile Remove="modules\**" />
+		<EmbeddedResource Remove="modules\**" />
+		<None Remove="modules\**" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="EPiServer.CMS.AspNetCore.HtmlHelpers" Version="12.20.2" />
-	<PackageReference Include="EPiServer.CMS.AspNetCore.TagHelpers" Version="12.20.2" />
-	<PackageReference Include="EPiServer.CMS.UI" Version="12.27.1" />
-    <PackageReference Include="EPiServer.Framework" Version="12.20.2" />
-  </ItemGroup>
+	<ItemGroup>
+		<None Remove="$(UserProfile)\.nuget\packages\**\*.zip" />
+		<None Remove="$(UserProfile)\.nuget\packages\**\*.config" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Cms.Features\Cms.Features.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<SupportedPlatform Include="browser" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="EPiServer.CMS.AspNetCore.HtmlHelpers" Version="12.20.2" />
+		<PackageReference Include="EPiServer.CMS.AspNetCore.TagHelpers" Version="12.20.2" />
+		<PackageReference Include="EPiServer.CMS.UI" Version="12.27.1" />
+		<PackageReference Include="EPiServer.Framework" Version="12.20.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Cms.Features\Cms.Features.csproj" />
+	</ItemGroup>
 
 </Project>

@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -9,6 +9,11 @@
   <ItemGroup>
     <PackageReference Include="EPiServer.Framework" Version="12.20.2" />
     <PackageReference Include="EPiServer.Framework.AspNetCore" Version="12.20.2" />
+    <PackageReference Include="MediatR" Version="12.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Cms.Features\Cms.Features.csproj" />
   </ItemGroup>
 
 </Project>

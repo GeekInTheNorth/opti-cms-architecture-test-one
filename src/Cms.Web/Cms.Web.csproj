@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="EPiServer.CMS" Version="12.27.1" />
+    <PackageReference Include="MediatR" Version="12.2.0" />
   </ItemGroup>
 
   <ItemGroup>

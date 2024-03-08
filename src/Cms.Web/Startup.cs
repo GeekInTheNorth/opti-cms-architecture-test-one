@@ -1,3 +1,4 @@
+using Cms.Features.Pages.Search;
 using Cms.Web.ServiceExtensions;
 using EPiServer.Cms.Shell;
 using EPiServer.Cms.Shell.UI;
@@ -26,11 +27,15 @@ public class Startup
             services.Configure<SchedulerOptions>(options => options.Enabled = false);
         }
 
-        services
-            .AddCmsAspNetIdentity<ApplicationUser>()
-            .AddCms()
-            .AddAdminUserRegistration(x => x.Behavior = RegisterAdminUserBehaviors.Enabled | RegisterAdminUserBehaviors.SingleUserOnly)
-            .AddEmbeddedLocalization<Startup>();
+        services.AddCmsAspNetIdentity<ApplicationUser>()
+                .AddCms()
+                .AddAdminUserRegistration(x => x.Behavior = RegisterAdminUserBehaviors.Enabled | RegisterAdminUserBehaviors.SingleUserOnly)
+                .AddEmbeddedLocalization<Startup>();
+
+        services.AddMediatR(config =>
+        {
+            config.RegisterServicesFromAssemblyContaining<SearchListingQuery>();
+        });
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -49,6 +54,7 @@ public class Startup
         app.UseEndpoints(endpoints =>
         {
             endpoints.MapContent();
+            endpoints.MapControllers();
         });
     }
 }

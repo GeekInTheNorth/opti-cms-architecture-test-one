@@ -10,6 +10,7 @@
 	<PackageReference Include="EPiServer.CMS.AspNetCore.Templating" Version="12.20.2" />
     <PackageReference Include="EPiServer.Framework" Version="12.20.2" />
 	<PackageReference Include="EPiServer.Framework.AspNetCore" Version="12.20.2" />
+	<PackageReference Include="MediatR" Version="12.2.0" />
   </ItemGroup>
 
 </Project>

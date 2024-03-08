@@ -1,0 +1,18 @@
+@using Cms.Headed.Pages.Search
+@model SearchPageViewModel
+
+<h1>@Model.CurrentPage.Heading</h1>
+
+@if(Model.SearchResults is { Count: >0 })
+{
+    <ul>
+        @foreach(var result in Model.SearchResults)
+        {
+            <li>(@result.Id) @result.Title</li>
+        }
+    </ul>
+}
+else
+{
+    <p>No Matches</p>
+}

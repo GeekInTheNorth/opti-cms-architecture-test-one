@@ -7,7 +7,7 @@ namespace Cms.Features.Blocks.RichText;
 [ContentType(
     DisplayName = "Rich Text",
     GUID = "9bfce21a-1a3b-4d5b-9c91-eed3c9f00866")]
-public class RichTextBlock : BlockData
+public class RichTextBlock : BlockData, IContentBlock
 {
     [Display(
         Name = "Rich Text",

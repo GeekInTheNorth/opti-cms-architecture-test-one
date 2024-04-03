@@ -1,4 +1,5 @@
-﻿using EPiServer.Core;
+﻿using Cms.Features.Blocks;
+using EPiServer.Core;
 using EPiServer.DataAnnotations;
 using System.ComponentModel.DataAnnotations;
 
@@ -17,5 +18,6 @@ public class HomePage : SitePageData
     [Display(
         Name = "Main Content",
         Order = 20)]
+    [AllowedTypes(typeof(IContentBlock))]
     public virtual ContentArea? MainContent { get; set; }
 }

@@ -1,10 +1,16 @@
 ﻿using EPiServer.Core;
+using EPiServer.DataAnnotations;
 using EPiServer.Web;
 using System.ComponentModel.DataAnnotations;
 
 namespace Cms.Features.Pages;
 
-public class SitePageData : PageData, ISitePageData
+// [ContentType(
+//     GUID = "51075152-d6e2-4367-ac01-ad42609c95ea", 
+//     DisplayName = "Site Page Data", 
+//     Description = "Contains shared properties for all pages that are visitable by website users",
+//     AvailableInEditMode = false)]
+public abstract class SitePageData : PageData, ISitePageData
 {
     [Display(
         Name = "Teaser Title",
